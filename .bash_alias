@@ -1,0 +1,5 @@
+alias l='ls -arlt'
+alias step='ssh c_tanaka_yuki@auth.rtc-rcloud.jp -p 443'
+alias git=hub
+alias openssl=/usr/local/opt/openssl/bin/openssl
+alias be='bundle exec'
