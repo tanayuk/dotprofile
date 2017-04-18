@@ -8,7 +8,8 @@ profiles=( $(ls $HOME/.*.profile) )
 
 for profile in $profiles
 do
-	echo "$profile"
+	echo "Sourcing $profile"
+	source $profile
 done
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
