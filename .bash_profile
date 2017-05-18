@@ -4,7 +4,9 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="/usr/local/sbin:$PATH"
 
-profiles=( $(ls $HOME/.*.profile) )
+profiles=($(ls $HOME/.*.profile))
+
+echo "Found profiles: ${profiles}"
 
 for profile in $profiles
 do
