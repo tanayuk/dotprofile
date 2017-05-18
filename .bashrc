@@ -11,10 +11,13 @@ export PATH=$HOME/local/bin:$PATH
 # Adding IntelliJ command
 export PATH=$PATH:/Applications/IntelliJ\ IDEA\ 14.app/Contents/MacOS
 
+# Mecab
+export PATH=/usr/local/mecab/bin:$PATH
+
 # Setting Default editor
 export EDITOR=vim
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/01011996/.sdkman"
-[[ -s "/Users/01011996/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/01011996/.sdkman/bin/sdkman-init.sh"
-export PATH=/Users/01011996/develop/mongodb/bin:$PATH
+export SDKMAN_DIR="${HOME}/.sdkman"
+[[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
+export PATH=${HOME}/develop/mongodb/bin:$PATH
