@@ -13,3 +13,5 @@ do
   echo "Successfully created symoblic link for profile ${profile}"
 done
 
+# Setting up vim Vundle for plugin management
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
