@@ -7,7 +7,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Custom plugins
+" Python related plugins
 Plugin 'klen/python-mode'
+
+" Markdown related plugins
+" tabular must come before vim-markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the follwing line
 call vundle#end()
@@ -17,8 +23,12 @@ filetype plugin indent on
 filetype plugin indent on
 syntax on
 
-" Syntax coloring
-syntax on
+" vim markdown settings
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_folding_level = 6
+let g:vim_markdown_new_list_item_indent = 2
+
+
 
 " Set tab size to 2
 set tabstop=2
