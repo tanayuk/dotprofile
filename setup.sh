@@ -9,9 +9,18 @@ pwd=$(pwd)
 echo "Creating symbolic link to under home directory"
 for profile in ${dot_profiles[@]/$ignore_files}
 do
-  ln -s ${pwd}/i${profile} $HOME/${profile}
+  if [ -f "${HOME}/${profile}" ]
+  then
+      mv ${HOME}/${profile} ${HOME}/${profile}.bk
+  fi
+
+  ln -s ${pwd}/${profile} $HOME/${profile}
   echo "Successfully created symoblic link for profile ${profile}"
 done
 
 # Setting up vim Vundle for plugin management
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d ${HOME}/.vim/bundle/Vundle.vim ]; then
+  echo "Vundle doesn't exist. Cloning from git"
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
