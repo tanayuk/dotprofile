@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-dot_profiles=($(ls -ed .[!.]*))
+dot_profiles=($(ls -d .[!.]*))
 
 echo "Found profiles: ${dot_profiles[@]}"
 ignore_files=(.git)
