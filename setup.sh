@@ -24,3 +24,14 @@ if [ ! -d ${HOME}/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
+# Setting up pyenv
+if [ ! -d ${HOME}/.pyenv ]; then
+  echo "pyenv hasn't been installed. Start installing it here"
+  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+fi
+
+# Setting up rbenv
+if [ ! -d ${HOME}/.rbenv ]; then
+  echo "rbenv hasn't been installed. Start installing it here"
+  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+fi
