@@ -20,6 +20,7 @@ done
 
 # Setting up vim Vundle for plugin management
 if [ ! -d ${HOME}/.vim/bundle/Vundle.vim ]; then
+  mkdir -p ~/.vim/bundle
   echo "Vundle doesn't exist. Cloning from git"
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
@@ -42,3 +43,12 @@ if [ -f ${HOME}/.tmux.conf ]; then
 fi
 ln -s ${pwd}/.tmux.conf ${HOME}/.tmux.conf
 echo "tmux configuration is copied successfully"
+
+# Setting up YouCompleteMe
+if [ ! -d ${HOME}/.vim/bundle/YouCompleteMe ]; then
+  echo "Setting up YouCompleteMe for C completion"
+  git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
+  cd ~/.vim/bundle/YouCompleteMe
+  git submodule update --init --recursive
+  ./install.sh --clang-completer
+fi
