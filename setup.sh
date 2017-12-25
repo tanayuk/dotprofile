@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dot_profiles=($(ls -d .[!.]*))
+dot_profiles=($(ls -d .[!.]*$[!.bk]))
 
 echo "Found profiles: ${dot_profiles[@]}"
 ignore_files=(.git)
@@ -36,6 +36,13 @@ if [ ! -d ${HOME}/.rbenv ]; then
   echo "rbenv hasn't been installed. Start installing it here"
   git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 fi
+
+# tmux configuration deployment
+if [ -f ${HOME}/.tmux.conf ]; then
+    mv ${HOME}/.tmux.conf ${HOME}/.tmux.conf.bk
+fi
+ln -s ${pwd}/.tmux.conf ${HOME}/.tmux.conf
+echo "tmux configuration is copied successfully"
 
 # Setting up YouCompleteMe
 if [ ! -d ${HOME}/.vim/bundle/YouCompleteMe ]; then
