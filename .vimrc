@@ -1,6 +1,9 @@
 set nocompatible
 filetype off
 
+" line number
+set number
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
