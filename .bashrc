@@ -2,6 +2,10 @@ source ~/.bash_alias
 
 eval "$(direnv hook bash)"
 
+# For language settings
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 export HISTSIZE=1000000
 export HISTTIMEFORMAT
 

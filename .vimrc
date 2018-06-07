@@ -1,6 +1,9 @@
 set nocompatible
 filetype off
 
+" line number
+set number
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -18,6 +21,13 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " Jedi (Auto-completion for Python)
 Plugin 'davidhalter/jedi-vim'
+
+" JS
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+" Solidity
+Plugin 'tomlion/vim-solidity'
 
 " All of your Plugins must be added before the follwing line
 call vundle#end()
@@ -44,3 +54,6 @@ set shiftwidth=4
 
 set background=dark
 highlight Normal ctermfg=grey ctermbg=black
+
+" JSX 
+let g:jsx_ext_required = 0

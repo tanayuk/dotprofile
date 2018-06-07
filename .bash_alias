@@ -4,3 +4,4 @@ alias git=hub
 alias openssl=/usr/local/opt/openssl/bin/openssl
 alias be='bundle exec'
 alias jn='jupyter notebook'
+alias bi='bundle install --path vendor/bundle'
