@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dot_profiles=($(ls -d .[!.]*$[!.bk]))
+dot_profiles=($(ls -d .[!.]* | grep -v git))
 
 echo "Found profiles: ${dot_profiles[@]}"
 ignore_files=(.git)
@@ -45,6 +45,22 @@ ln -s ${pwd}/.tmux.conf ${HOME}/.tmux.conf
 echo "tmux configuration is copied successfully"
 
 # Setting up YouCompleteMe
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+echo "Installing Python 3.7.4 for the installation of YouCompleteMe"
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    echo "Detected this is Linux OS"
+    echo "Installing C compilers according to Linux distribution"
+    if [[ $(cat /etc/os-release | grep "ID_LIKE" | tr 'ID_LIKE\=' ' ' | xargs echo) == "debian"  ]]; then
+      echo "Detected the distribution is Debian"
+	    sudo apt install -y build-essential libffi-dev libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev 
+      sudo apt install -y direnv
+    fi    
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "Detected this is Mac OS"
+fi
+pyenv install 3.7.4
+pyenv global 3.7.4
 if [ ! -d ${HOME}/.vim/bundle/YouCompleteMe ]; then
   echo "Setting up YouCompleteMe for C completion"
   git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
