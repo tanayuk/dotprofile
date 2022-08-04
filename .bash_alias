@@ -1,5 +1,4 @@
 alias l='ls -arlt'
-alias git=hub
 alias openssl=/usr/local/opt/openssl/bin/openssl
 alias be='bundle exec'
 alias jn='jupyter notebook'
@@ -7,3 +6,4 @@ alias bi='bundle install --path vendor/bundle'
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias b='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 alias v='code $(ghq root)/$(ghq list | peco)'
+alias sb='npm run storybook'

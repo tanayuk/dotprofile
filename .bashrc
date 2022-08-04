@@ -1,7 +1,5 @@
 source ~/.bash_alias
 
-eval "$(direnv hook bash)"
-
 # For language settings
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -24,7 +22,6 @@ export EDITOR=vim
 # Virtualenv for python
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="${HOME}/.sdkman"
